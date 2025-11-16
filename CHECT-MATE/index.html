@@ -1,20 +1,203 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>CHECK-MATE</title>
-    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome CDN -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #5028ff, #8c1eff, #c61eff);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: white;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            font-size: 45px;
+            margin: 0;
+            font-weight: 600;
+            letter-spacing: 3px;
+        }
+
+        header .tagline {
+            margin-top: 5px;
+            font-size: 16px;
+            opacity: 0.8;
+        }
+
+        /* Main content */
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            width: 420px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 18px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+            animation: pop 0.8s ease-in-out;
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(0.85);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .card h2 {
+            margin-bottom: 15px;
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            font-size: 15px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: white;
+            color: #6a00ff;
+            font-size: 17px;
+            margin-top: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: #ececec;
+        }
+
+        .view-link {
+            display: block;
+            text-align: center;
+            margin-top: 18px;
+            padding: 10px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.25);
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .view-link:hover {
+            background: rgba(255, 255, 255, 0.45);
+        }
+
+        /* Extra section */
+        .extra-box {
+            margin-top: 25px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+    </style>
 </head>
-<body> <center>
-<h1>CHECK-MATE</h1>
-<form action="addTask" method="post">
-    <input type="text" name="taskName" placeholder="Enter task" required>
-    <input type="date" name="taskDate">
-    <button type="submit">Add Task</button>
-</form>
 
-<br>
-<a href="listTasks">View All Tasks</a>
-</center></body>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1><i class="fas fa-check-circle"></i> CHECK-MATE</h1>
+        <p class="tagline">Plan smart. Work smart. Achieve more.</p>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="wrapper">
+
+        <div class="card">
+
+            <h2><i class="fas fa-plus"></i> Add Your Task</h2>
+
+            <form action="addTask" method="post">
+
+                <div class="input-group">
+                    <label><i class="fas fa-tasks"></i> Task Title</label>
+                    <input type="text" name="taskName" placeholder="Enter task..." required>
+                </div>
+
+                <div class="input-group">
+                    <label><i class="fas fa-calendar-alt"></i> Deadline</label>
+                    <input type="date" name="taskDate">
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    <i class="fas fa-upload"></i> Add Task
+                </button>
+            </form>
+
+            <a href="listTasks" class="view-link">
+                <i class="fas fa-list"></i> View All Tasks
+            </a>
+
+            <div class="extra-box">
+                <i class="fas fa-lightbulb"></i> Tip: Stay consistent.  
+                Update tasks daily to boost productivity.
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        Made with ❤️ using Java Servlets & JSP
+    </footer>
+
+</body>
 </html>
-
